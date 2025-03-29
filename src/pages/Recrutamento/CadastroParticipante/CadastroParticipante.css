@@ -1,0 +1,216 @@
+.container-cadastro-participante {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+}
+
+.main-cadastro-participante {
+    padding: 0;
+    width: 80%;
+    margin-left: 100px;
+    padding: 10px;
+
+    & .titulos {
+        display: flex;
+        gap: 30px;
+        border-bottom: 1px solid #404142;
+
+        & h3 {
+            font-size: 1rem;
+            color: grey;
+            width: fit-content;
+            cursor: pointer;
+            padding: 5px;
+            margin: 0 10px;
+            margin-left: 0;
+            display: inline-block;
+        }
+
+        & h3.active {
+            border-bottom: 2px solid #404142;
+            /* Ajuste a cor conforme necessário */
+            padding-bottom: 5px;
+        }
+
+        & h3:hover {
+            border-bottom: 2px solid #404142;
+            transition: .5s;
+        }
+    }
+
+    & form {
+        padding: 30px;
+
+        & .step1 {
+            zoom: 90%;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            width: 100%;
+
+            & .principais-dados {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                grid-template-areas:
+                    "nome nome apelido apelido"
+                    "sexo genero sexualidade sexualidade"
+                    "rg cpf nascimento idade"
+                    "cep rua numero complemento"
+                    "bairro cidade estado pais"
+                    "celular telefonectt telefonercd nomercd"
+                    "pcd pcd profissao profissao"
+                ;
+                gap: 20px;
+
+                & div {
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                }
+            }
+
+            & .secao-contatos {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                gap: 20px;
+
+
+
+                & .ipt-contatos {
+                    display: flex;
+                    justify-content: space-between;
+                    gap: 10px;
+
+                    & div {
+                        width: 100%;
+
+                        & input {
+                            width: 90%;
+                        }
+                    }
+                }
+
+                & .btns-contatos {
+                    display: flex;
+                    gap: 20px;
+                }
+
+                & .tb-contatos {
+                    width: 100%;
+
+                    & thead {
+
+                        & tr {
+                            font-size: 1.2rem;
+                            font-weight: bold;
+                            color: #58595B;
+                        }
+                    }
+                }
+            }
+
+            & .secao-redes {
+                display: grid;
+                grid-template-areas:
+                    "email insta"
+                    "facebook conheceu";
+                width: 100%;
+                gap: 20px;
+
+                & input {
+                    width: 90%
+                }
+            }
+        }
+
+        & .step2 {
+            zoom: 90%;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            width: 100%;
+
+            & .secao-fenotipo {
+                & h4 {
+                    font-size: 1.2rem;
+                    color: #A6A6A6;
+                }
+
+                & .info-fenotipo {
+                    gap: 20px;
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr;
+                    grid-template-areas:
+                        "olho cor-cabelo cor-pele"
+                        "expo-sol expo-sol fenotipo"
+                    ;
+                    justify-content: center;
+                    align-items: center;
+
+                    & input {
+                        width: 90%;
+                    }
+                }
+
+
+
+
+                & div {
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                }
+            }
+
+            & .secao-sensibilidade {
+                & .info-sensibilidade {
+                    gap: 20px;
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    grid-template-areas:
+                        "quente-frio descamar"
+                        "coceira-sabonete sensibilidade"
+                    ;
+                    justify-content: center;
+                    align-items: center;
+
+                    & input {
+                        width: 90%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+& .btn-ctt {
+    background-color: #404142;
+    color: white;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+}
+
+& .btns-nav {
+    align-self: flex-end;
+    display: flex;
+    justify-content: right;
+    gap: 10px;
+}
+
+.btns-nav:last-child {
+    margin-right: 20px;
+}
+
+h4 {
+    font-size: 1.2rem;
+    color: #A6A6A6;
+}
+
+/* Adiciona borda inferior para o título ativo */

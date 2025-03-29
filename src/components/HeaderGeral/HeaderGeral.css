@@ -1,0 +1,40 @@
+.header-geral {
+    background-color: #f7f7f7;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 27px;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    border-bottom: 1px solid rgb(165, 165, 165);
+    padding-bottom: 40px;
+
+    & img {
+        width: 140px;
+        height: 41px;
+    }
+
+    & input {
+        font-size: 1.1rem;
+        padding: 10px 90px;
+        border-radius: 50px;
+        border: none;
+        box-shadow: inset 0px 0px 2px 2px #00000013;
+    }
+
+    & #notify {
+        cursor: pointer;
+
+        & #sino {
+            font-size: 1.7rem;
+            border-radius: 50%;
+            padding: 5px;
+            box-shadow: inset 0px 0px 2px 2px #00000013;
+            background-color: white;
+        }
+    }
+}

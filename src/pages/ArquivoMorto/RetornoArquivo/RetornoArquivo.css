@@ -1,0 +1,22 @@
+.main-ret-arquivo {
+    width: 100%;
+    padding: 0px 0px 0px 0px;
+}
+
+.search-caixa {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+
+    & .info-caixa {
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        padding: 3rem;
+        border-radius: 5px;
+        box-shadow: inset 0px 0px 3px 0px rgba(0, 0, 0, 0.62);
+    }
+}

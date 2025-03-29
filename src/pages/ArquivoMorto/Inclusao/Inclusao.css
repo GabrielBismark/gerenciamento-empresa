@@ -1,0 +1,48 @@
+.main-inclusao {
+    width: 100%;
+    padding: 0px 0px 0px 0px;
+
+    & .boxes-info {
+        padding: 20px;
+        display: grid;
+        grid-template-areas:
+            "conteudo data"
+            "orc provisorio"
+            "ensaio ensaio"
+            "patroc ps-area";
+        gap: 30px;
+
+        & .box-inputs {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    & .conteudo {
+        grid-area: conteudo;
+    }
+
+    & .data {
+        grid-area: data;
+    }
+
+    & .provisorio {
+        grid-area: provisorio;
+    }
+
+    & .orc {
+        grid-area: orc;
+    }
+
+    & .ensaio {
+        grid-area: ensaio;
+    }
+
+    & .patroc {
+        grid-area: patroc;
+    }
+
+    & .ps-area {
+        grid-area: ps-area;
+    }
+}

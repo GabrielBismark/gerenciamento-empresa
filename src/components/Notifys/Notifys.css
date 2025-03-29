@@ -1,0 +1,41 @@
+.notification-dropdown {
+    position: fixed;
+    z-index: 1000;
+    /* Garante que esteja acima de outros elementos */
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    padding: 10px;
+    width: 300px;
+    /* Ou o tamanho que desejar */
+}
+
+.notification-dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.notification-dropdown li {
+    padding: 10px 15px;
+    border-bottom: 1px solid #f0f0f0;
+    cursor: pointer;
+}
+
+.notification-dropdown li:hover {
+    background-color: #f9f9f9;
+}
+
+.notification-dropdown li:last-child {
+    border-bottom: none;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}

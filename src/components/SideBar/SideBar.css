@@ -1,0 +1,94 @@
+#container-side {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 80px;
+    /* Largura inicial */
+    background-color: #f8f9fa;
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    gap: 10px;
+    overflow: hidden;
+    transition: width 0.3s ease;
+    /* Animação suave */
+    z-index: 1001;
+}
+
+#container-side.expanded {
+    width: 250px;
+    /* Largura expandida */
+}
+
+.user-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.user-photo {
+    width: 60px;
+    height: 60px;
+    background-color: #ddd;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.user-name {
+    margin-top: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.icons-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5rem;
+    color: #555;
+    cursor: pointer;
+    width: 100%;
+    padding: 10px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.icons:hover {
+    background-color: #ececec;
+    color: orange;
+}
+
+.icons span {
+    white-space: nowrap;
+    font-size: 1rem;
+}
+
+.sub-options {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 20px;
+}
+
+.sub-options a {
+    text-decoration: none;
+    color: #777;
+    font-size: 0.9rem;
+    margin: 5px 0;
+}
+
+.sub-options a:hover {
+    color: #007bff;
+}
