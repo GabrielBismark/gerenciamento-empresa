@@ -1,25 +1,21 @@
 //Imports gerais
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { createBrowserRouter, RouterProvider} from "react-router-dom"
+import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import 'typeface-roboto';
 
 //------------------
 //Import das pages
 import { Login } from './pages/Login/Login.jsx'
 import { Home } from './pages/Home/Home.jsx'
-import { Inclusao } from './pages/ArquivoMorto/Inclusao/Inclusao.jsx'
-import { RetornoArquivo } from './pages/ArquivoMorto/RetornoArquivo/RetornoArquivo.jsx'
-import { Descarte } from './pages/ArquivoMorto/Descarte/Descarte.jsx'
-import { RelatorioArquivo } from './pages/ArquivoMorto/RelatorioArquivo/RelatorioArquivo.jsx'
-import { EtiquetaMorto } from './pages/ArquivoMorto/EtiquetaMorto/EtiquetaMorto.jsx'
-import { ArquivarCaixas } from './pages/ArquivoMorto/ArquivarCaixas/ArquivarCaixas.jsx'
-import { CadastroParticipante } from './pages/Recrutamento/CadastroParticipante/CadastroParticipante.jsx'
-import {SolAbertas} from '../src/pages/ArquivoMorto/SolAbertas/SolAbertas.jsx'
+import { Controle } from './pages/Controle/Controle.jsx';
 //-----------------
 
 import './index.css'
 import App from './App.jsx'
+import { Usuarios } from './pages/Controle/Usuarios/Usuarios.jsx';
+import { AreaTecnica } from './pages/AreaTecnica/AreaTecnica.jsx';
+import { Agendamento } from './pages/AreaTecnica/Agendamento/Agendamento.jsx';
 
 //Definindo as rotas para cada page
 const router = createBrowserRouter([
@@ -38,37 +34,21 @@ const router = createBrowserRouter([
         element: <Home />
       },
       {
-        path: "/ArquivoMorto/Inclusao",
-        element: <Inclusao />
+        path: "/Controle",
+        element: <Controle />,
       },
       {
-        path: "/ArquivoMorto/RetornoArquivo",
-        element: <RetornoArquivo />
+        path: "/Controle/Usuarios",
+        element: <Usuarios />,
       },
       {
-        path: "/ArquivoMorto/Descarte",
-        element: <Descarte />
+        path: "/Area-tecnica",
+        element: <AreaTecnica/>,
       },
       {
-        path: "/ArquivoMorto/Relatorio",
-        element: <RelatorioArquivo />
-      },
-      {
-        path: "/ArquivoMorto/EtiquetaMorto",
-        element: <EtiquetaMorto />
-      },
-      {
-        path: "/ArquivoMorto/Arquivar",
-        element: <ArquivarCaixas />
-      },
-      {
-        path: "/Recrutamento/CadastroParticipante",
-        element: <CadastroParticipante />
-      },
-      {
-        path: "/Arquivomorto/SolAbertas",
-        element: <SolAbertas />
-      },
+        path: "/Area-tecnica/Agendamento",
+        element: <Agendamento />,
+      }
     ]
   }
 ])

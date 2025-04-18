@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { FiHome, FiStar, FiSettings } from "react-icons/fi";
+import { FiHome, FiStar, FiSettings, FiLogOut } from "react-icons/fi";
 import { RxRocket } from "react-icons/rx";
 import { TiDocumentText } from "react-icons/ti";
 import { GrCycle } from "react-icons/gr";
@@ -18,6 +18,10 @@ function SideBar() {
         setActiveItem(activeItem === item ? null : item);
     };
 
+    const logout = () => {
+        localStorage.removeItem('authToken'); // Remove o JWT
+        window.location.href = '/'; // Redireciona para login
+    };
     return (
         <div
             id="container-side"
@@ -55,7 +59,7 @@ function SideBar() {
                         <Link to="">Historico</Link>
                     </div>
                 )}
-                
+
                 <Link to="" className="icons">
                     <TiDocumentText />
                     {isExpanded && <span>Documentos</span>}
@@ -70,10 +74,15 @@ function SideBar() {
                     <BsListTask />
                     {isExpanded && <span>Tarefas</span>}
                 </Link>
-                
-                <Link to="" className="icons">
+
+                <Link to="/Controle" className="icons">
                     <FiSettings />
                     {isExpanded && <span>Painel de Controle</span>}
+                </Link>
+
+                <Link onClick={logout} className="icons">
+                    <FiLogOut />
+                    {isExpanded && <span>Sair</span>}
                 </Link>
             </div>
         </div>

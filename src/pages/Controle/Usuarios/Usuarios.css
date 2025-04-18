@@ -1,0 +1,214 @@
+* {
+    overflow-x: hidden;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body:has(#container-usuarios) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #f7f7f7;
+}
+
+.main-usuarios {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 7%;
+    width: 100%;
+    height: 100%;
+    gap: 20px;
+}
+
+.tabela-usuarios {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 20px;
+
+    & .btn-table {
+        border: none;
+        padding: 5px 10px;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-right: 5px;
+        font-size: 1.1rem;
+        font-weight: bold;
+    }
+
+    & .adc {
+        background-color: var(--green_medcin);
+        color: white;
+        margin-top: 10PX;
+    }
+}
+
+/* .table-usuarios {
+    border-collapse: collapse;
+    background-color: white;
+    padding: 20px;
+
+   
+    border-collapse: collapse;
+    border-radius: 10px;
+
+    h3 {
+        color: var(--cor_neutra);
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    thead tr {
+        border: 1px solid black;
+
+        th {
+            color: var(--cor_neutra);
+            padding: 10px;
+            text-align: left;
+            border-left: 1px solid black;
+            border-right: 1px solid black;
+        }
+    }
+
+    tbody {
+        tr {
+            border: 1px solid black;
+
+            td {
+                padding: 10px;
+                border-left: 1px solid black;
+                border-right: 1px solid black;
+                color: var(--cor_neutra);
+
+
+
+                & .btn-table:hover {
+                    color: black !important;
+                }
+
+                & .edit {
+                    background-color: var(--blue_medcin);
+                    color: white !important;
+                }
+
+                & .del {
+                    background-color: red;
+                    color: white !important
+                }
+            }
+        }
+    }
+} */
+
+.table-usuarios {
+    width: 70%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    text-align: left;
+    background-color: whitesmoke;
+    color: var(--grey_medcin);
+}
+
+.table-usuarios th {
+    background-color: var(--blue_medcin);
+    color: white;
+    padding: 10px;
+    text-transform: uppercase;
+}
+
+.table-usuarios td {
+    padding: 10px;
+}
+
+.table-usuarios tr {
+    border: 1px solid var(--blue_medcin);
+}
+
+.table-usuarios tr:hover {
+    background-color: rgb(166, 200, 216);
+    color: white;
+}
+
+.table-usuarios .btn-table {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+}
+
+.table-usuarios .btn-table.edit {
+    background-color: var(--blue_medcin);
+}
+
+.table-usuarios .btn-table.del {
+    background-color: red;
+}
+
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+
+    & input {
+        border-radius: 5px;
+        border: 1px solid var(--cor_primaria);
+        padding: 10px;
+    }
+}
+
+.modal button {
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.search-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 70%;
+    gap: 20px;
+    margin-top: 20px;
+
+    & .btn-table.adc {
+        background-color: var(--green_medcin);
+        margin-top: 10px;
+        display: inline-block;
+    }
+}
+
+.search-input {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid var(--grey_medcin);
+    font-size: 16px;
+    width: 100%;
+}

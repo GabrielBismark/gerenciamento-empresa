@@ -1,46 +1,44 @@
 * {
     overflow-x: hidden;
-    box-sizing: border-box ;
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-a {
-    text-decoration: none;
-    color: black;
-}
-
-body:has(#container-home) {
+body:has(#container-controle) {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 0;
     width: 100vw;
+    height: 100vh;
     background-color: #f7f7f7;
 }
 
-#container-home {
+.main-controle {
     display: flex;
-    align-items: flex-start;
-    justify-content: center;
     flex-direction: column;
-
+    margin-top: 7%;
+    margin-left: 5%;
+    width: 100%;
+    height: 100%;  
+    gap: 20px;
 }
 
-.main-home {
+
+.grid-controle {
     display: grid;
     grid-template-areas: 
-    "tecnica cronograma recrutamento" 
+    "usuarios cronograma recrutamento" 
     "comercial compras amostras" 
     "operacional arquivo suporte" ;
     gap: 1%;
-    margin-top: 8%;
     width: 100%;
     zoom: 83%;
 }
 
-.secao {
+.secao-controle {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     flex-direction: row;
@@ -54,19 +52,20 @@ body:has(#container-home) {
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-left-color 0.3s ease;
 
-    & h1 {
+    & h2 {
         color: var(--grey_medcin);
         width: 100%;
         align-self: center;
     }
 }
-.secao:hover {
+
+.secao-controle:hover {
     transform: translateY(-10px);
     z-index: 1000;
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.342);
 }
 
-.secao:hover h1 {
+.secao-controle:hover h2 {
     color: #808080;
     transition: color 0.3s ease;
 }

@@ -28,7 +28,7 @@ function Header() {
     return (
         <div className='header-geral'>
             <Link to={'/Home'}>
-                <img src="https://medcininstituto120196.fluig.cloudtotvs.com.br/portal/api/servlet/image/1/custom/logo_image.png" alt="Logo" />
+                <img src="https://medcininstituto120196.fluig.cloudtotvs.com.br/portal/api/servlet/image/1/custom/logo_image.png" alt="Logo" className='img-header' />
             </Link>
 
             <input type="text" className='search' placeholder='Digite o que deseja buscar' />

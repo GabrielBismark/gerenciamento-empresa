@@ -1,0 +1,202 @@
+* {
+    overflow-x: hidden;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body:has(#container-agendamento) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    width: 100vw;
+    background-color: #f7f7f7;
+}
+
+#container-agendamento {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.main-agendamento {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 2%;
+    margin-top: 7%;
+    width: 100vw;
+}
+
+.container-configuracao {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 20px;
+
+    & h2{
+        font-size: 2rem;
+        color: var(--blue_medcin);
+        font-weight: bold;
+        text-align: center;
+    }
+
+    & select{
+        padding: 10px 20px;
+        font-size: 1.2rem;
+        border: 1px solid var(--blue_medcin);
+        border-radius: 20px;
+        width: 70%;
+    }
+}
+.data-selec{
+    font-size: 1.2rem;
+    color: var(--blue_medcin);
+    font-weight: bold;
+    text-align: center;
+}
+
+.btn-gerar{
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    color: white;
+    background-color: var(--blue_medcin);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#tb_agenda {
+    width: 70%;
+    border-collapse: collapse;
+    border-radius: 10px;
+    margin: 20px 0;
+    font-size: 16px;
+    text-align: left;
+    background-color: whitesmoke;
+    color: var(--grey_medcin);
+}
+
+#tb_agenda th {
+    background-color: var(--blue_medcin);
+    color: white;
+    padding: 10px;
+    text-transform: uppercase;
+}
+
+#tb_agenda td {
+    padding: 10px;
+    color: black;
+}
+
+.horario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#tb_agenda tr {
+    border: 1px solid var(--blue_medcin);
+    border-radius: 30px;
+}
+
+#tb_agenda tr:hover {
+    background-color: rgb(166, 200, 216);
+    color: white;
+}
+
+#tb_agenda .btn-table {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+}
+
+#tb_agenda .btn-success {
+    background-color: var(--green_medcin);
+    border: none;
+    color: white;
+    padding: 5px 5px;
+    border-radius: 5px;
+}
+
+#tb_agenda .btn-table.del {
+    background-color: red;
+}
+
+.custom-calendar {
+    border: 1px solid var(--blue_medcin);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    background-color: #ffffff;
+}
+
+.react-calendar__tile {
+    padding: 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.react-calendar__tile:hover {
+    background-color: var(--green_medcin);
+    color: white;
+}
+
+.react-calendar__tile--active {
+    background-color: var(--blue_medcin);
+    color: white;
+    border-radius: 5px;
+}
+
+.react-calendar__navigation button {
+    color: var(--blue_medcin);
+    font-weight: bold;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-height: 90%;
+    overflow-y: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.close {
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modal-btn{
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    color: white;
+    background-color: var(--blue_medcin);
+}

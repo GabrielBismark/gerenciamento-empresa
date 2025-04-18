@@ -1,4 +1,4 @@
-body {
+body:has(#container) {
     margin: 0 auto;
     box-sizing: border-box;
 
@@ -25,7 +25,7 @@ body {
         padding: 20px;
         background-color: white;
 
-        & img {
+        & .img-login {
             width: 90%;
         }
     }
@@ -38,7 +38,7 @@ body {
         width: 100%;
         padding: 20px;
 
-        & input {
+        & .ipt-login {
             padding: 10px 20px;
             border-radius: 20px;
             border: 1px solid grey;
@@ -52,6 +52,17 @@ body {
             color: orange;
             border: 1px solid orange;
             border-radius: 50px;
+            cursor: pointer;
+        
+        }
+        & #entrar-btn:hover {
+            background-color: orange;
+            color: white;
+            transition: 0.3s;
+        }
+        & #entrar-btn:active {
+            transform: scale(0.95);
+            transition: 0.1s;
         }
     }
 }

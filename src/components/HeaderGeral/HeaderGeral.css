@@ -13,12 +13,12 @@
     border-bottom: 1px solid rgb(165, 165, 165);
     padding-bottom: 40px;
 
-    & img {
+    & .img-header{
         width: 140px;
         height: 41px;
     }
 
-    & input {
+    & .search {
         font-size: 1.1rem;
         padding: 10px 90px;
         border-radius: 50px;
