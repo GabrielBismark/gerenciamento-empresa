@@ -73,7 +73,7 @@ export const Agendamento = () => {
         }
 
         setTbAgenda(novaAgenda);
-        setShowModalTb(true); 
+        setShowModalTb(true);
     };
 
     const adicionarVaga = (index) => {
@@ -175,191 +175,193 @@ export const Agendamento = () => {
                         <option value="tele">Teleatendimento</option>
                     </select>
 
-                    <button className='btn-gerar' onClick={() => { gerarAgenda()}}>Gerar Agenda</button>
+                    <button className='btn-gerar' onClick={() => { gerarAgenda() }}>Gerar Agenda</button>
                 </div>
 
                 {showModalTb && (
-                    <div className="modal">
-                        <div className="modal-content">
-                            <div style={{ display: "flex", justifyContent: "space-between", gap: "20px", alignItems: "center" }}>
+                    <div className="modal-agenda">
+                        <div className="modal-content-agenda">
+                            <div style={{ display: "flex", justifyContent: "space-between", gap: "20px", alignItems: "center", overflow: "hidden", padding: "10px" }}>
                                 <h2>Agenda Gerada</h2>
                                 <button className="close" onClick={() => setShowModalTb(false)}>X</button>
                             </div>
-                            <table id="tb_agenda">
-                                <thead>
-                                    <tr>
-                                        <th>Horário</th>
-                                        <th>Orçamento</th>
-                                        <th>Estudo</th>
-                                        <th>Vaga</th>
-                                        <th>Tempo</th>
-                                        <th>Status</th>
-                                        <th>Ações</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {tbAgenda.map((item, index) => (
-                                        <React.Fragment key={index}>
-                                            <tr className={item.bloqueado ? "bloqueado" : ""}>
-                                                <td className="horario" rowSpan={item.vagas ? item.vagas.length + 1 : 1}>
-                                                    {item.horario}
-                                                    <button
-                                                        className="btn btn-success btn-sm"
-                                                        onClick={() => adicionarVaga(index)}
-                                                    >
-                                                        +
-                                                    </button>
-                                                </td>
-                                                <td>
-                                                    <input
-                                                        type="text"
-                                                        value={item.orc}
-                                                        onChange={(e) => {
-                                                            const novaAgenda = [...tbAgenda];
-                                                            novaAgenda[index].orc = e.target.value;
-                                                            setTbAgenda(novaAgenda);
-                                                        }}
-                                                    />
-                                                </td>
-                                                <td>
-                                                    <input
-                                                        type="text"
-                                                        value={item.estudo}
-                                                        onChange={(e) => {
-                                                            const novaAgenda = [...tbAgenda];
-                                                            novaAgenda[index].estudo = e.target.value;
-                                                            setTbAgenda(novaAgenda);
-                                                        }}
-                                                    />
-                                                </td>
-                                                <td>
-                                                    <input
-                                                        type="text"
-                                                        value={item.vaga}
-                                                        onChange={(e) => {
-                                                            const novaAgenda = [...tbAgenda];
-                                                            novaAgenda[index].vaga = e.target.value;
-                                                            setTbAgenda(novaAgenda);
-                                                        }}
-                                                    />
-                                                </td>
-                                                <td>
-                                                    <input
-                                                        type="text"
-                                                        value={item.tempo}
-                                                        onChange={(e) => {
-                                                            const novaAgenda = [...tbAgenda];
-                                                            novaAgenda[index].tempo = e.target.value;
-                                                            setTbAgenda(novaAgenda);
-                                                        }}
-                                                    />
-                                                </td>
-                                                <td>
-                                                    <select
-                                                        id='status'
-                                                        value={item.status}
-                                                        onChange={(e) => {
-                                                            const novaAgenda = [...tbAgenda];
-                                                            novaAgenda[index].status = e.target.value;
-                                                            setTbAgenda(novaAgenda);
-                                                        }}
-                                                    >
-                                                        <option value="">Selecione...</option>
-                                                        <option value="Aguardando">Aguardando</option>
-                                                        <option value="Em Andamento">Em Andamento</option>
-                                                        <option value="Finalizado">Finalizado</option>
-                                                        <option value="Cancelado">Cancelado</option>
-                                                    </select>
-                                                </td>
-                                                <td>
-                                                    <button
-                                                        className="btn btn-danger"
-                                                        onClick={() => bloquearHorario(index)}
-                                                    >
-                                                        {item.bloqueado ? "Desbloquear" : "Bloquear"}
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            {item.vagas &&
-                                                item.vagas.map((vaga, vagaIndex) => (
-                                                    <tr key={`${index}-${vagaIndex}`}>
-                                                        <td className="vaga">{vaga.horario}</td>
-                                                        <td>
-                                                            <input
-                                                                type="text"
-                                                                value={vaga.orc}
-                                                                onChange={(e) => {
-                                                                    const novaAgenda = [...tbAgenda];
-                                                                    novaAgenda[index].vagas[vagaIndex].orc = e.target.value;
-                                                                    setTbAgenda(novaAgenda);
-                                                                }}
-                                                            />
-                                                        </td>
-                                                        <td>
-                                                            <input
-                                                                type="text"
-                                                                value={vaga.estudo}
-                                                                onChange={(e) => {
-                                                                    const novaAgenda = [...tbAgenda];
-                                                                    novaAgenda[index].vagas[vagaIndex].estudo = e.target.value;
-                                                                    setTbAgenda(novaAgenda);
-                                                                }}
-                                                            />
-                                                        </td>
-                                                        <td>
-                                                            <input
-                                                                type="text"
-                                                                value={vaga.vaga}
-                                                                onChange={(e) => {
-                                                                    const novaAgenda = [...tbAgenda];
-                                                                    novaAgenda[index].vagas[vagaIndex].vaga = e.target.value;
-                                                                    setTbAgenda(novaAgenda);
-                                                                }}
-                                                            />
-                                                        </td>
-                                                        <td>
-                                                            <input
-                                                                type="text"
-                                                                value={vaga.tempo}
-                                                                onChange={(e) => {
-                                                                    const novaAgenda = [...tbAgenda];
-                                                                    novaAgenda[index].vagas[vagaIndex].tempo = e.target.value;
-                                                                    setTbAgenda(novaAgenda);
-                                                                }}
-                                                            />
-                                                        </td>
-                                                        <td>
-                                                            <select
-                                                                id='status'
-                                                                value={vaga.status}
-                                                                onChange={(e) => {
-                                                                    const novaAgenda = [...tbAgenda];
-                                                                    novaAgenda[index].vagas[vagaIndex].status = e.target.value;
-                                                                    setTbAgenda(novaAgenda);
-                                                                }}
-                                                            >
-                                                                <option value="">Selecione...</option>
-                                                                <option value="Aguardando">Aguardando</option>
-                                                                <option value="Em Andamento">Em Andamento</option>
-                                                                <option value="Finalizado">Finalizado</option>
-                                                                <option value="Cancelado">Cancelado</option>
-                                                            </select>
-                                                        </td>
-                                                        <td>
-                                                            <button
-                                                                className="btn btn-danger"
-                                                                onClick={() => removerVaga(index, vagaIndex)}
-                                                            >
-                                                                Remover
-                                                            </button>
-                                                        </td>
-                                                    </tr>
-                                                ))}
-                                        </React.Fragment>
-                                    ))}
-                                </tbody>
-                            </table>
-                            <button onClick={enviarAgenda} className='modal-btn'>Salvar no Firebase</button>
+                            <div className="table-container">
+                                <table id="tb_agenda">
+                                    <thead>
+                                        <tr>
+                                            <th>Horário</th>
+                                            <th>Orçamento</th>
+                                            <th>Estudo</th>
+                                            <th>Vaga</th>
+                                            <th>Tempo</th>
+                                            <th>Status</th>
+                                            <th>Ações</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {tbAgenda.map((item, index) => (
+                                            <React.Fragment key={index}>
+                                                <tr className={item.bloqueado ? "bloqueado" : ""}>
+                                                    <td className="horario" rowSpan={item.vagas ? item.vagas.length + 1 : 1}>
+                                                        {item.horario}
+                                                        <button
+                                                            className="btn btn-success btn-sm"
+                                                            onClick={() => adicionarVaga(index)}
+                                                        >
+                                                            +
+                                                        </button>
+                                                    </td>
+                                                    <td>
+                                                        <input
+                                                            type="text"
+                                                            value={item.orc}
+                                                            onChange={(e) => {
+                                                                const novaAgenda = [...tbAgenda];
+                                                                novaAgenda[index].orc = e.target.value;
+                                                                setTbAgenda(novaAgenda);
+                                                            }}
+                                                        />
+                                                    </td>
+                                                    <td>
+                                                        <input
+                                                            type="text"
+                                                            value={item.estudo}
+                                                            onChange={(e) => {
+                                                                const novaAgenda = [...tbAgenda];
+                                                                novaAgenda[index].estudo = e.target.value;
+                                                                setTbAgenda(novaAgenda);
+                                                            }}
+                                                        />
+                                                    </td>
+                                                    <td>
+                                                        <input
+                                                            type="text"
+                                                            value={item.vaga}
+                                                            onChange={(e) => {
+                                                                const novaAgenda = [...tbAgenda];
+                                                                novaAgenda[index].vaga = e.target.value;
+                                                                setTbAgenda(novaAgenda);
+                                                            }}
+                                                        />
+                                                    </td>
+                                                    <td>
+                                                        <input
+                                                            type="text"
+                                                            value={item.tempo}
+                                                            onChange={(e) => {
+                                                                const novaAgenda = [...tbAgenda];
+                                                                novaAgenda[index].tempo = e.target.value;
+                                                                setTbAgenda(novaAgenda);
+                                                            }}
+                                                        />
+                                                    </td>
+                                                    <td>
+                                                        <select
+                                                            id='status'
+                                                            value={item.status}
+                                                            onChange={(e) => {
+                                                                const novaAgenda = [...tbAgenda];
+                                                                novaAgenda[index].status = e.target.value;
+                                                                setTbAgenda(novaAgenda);
+                                                            }}
+                                                        >
+                                                            <option value="">Selecione...</option>
+                                                            <option value="Aguardando">Aguardando</option>
+                                                            <option value="Em Andamento">Em Andamento</option>
+                                                            <option value="Finalizado">Finalizado</option>
+                                                            <option value="Cancelado">Cancelado</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <button
+                                                            className="btn btn-danger"
+                                                            onClick={() => bloquearHorario(index)}
+                                                        >
+                                                            {item.bloqueado ? "Desbloquear" : "Bloquear"}
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                {item.vagas &&
+                                                    item.vagas.map((vaga, vagaIndex) => (
+                                                        <tr key={`${index}-${vagaIndex}`}>
+                                                            <td className="vaga">{vaga.horario}</td>
+                                                            <td>
+                                                                <input
+                                                                    type="text"
+                                                                    value={vaga.orc}
+                                                                    onChange={(e) => {
+                                                                        const novaAgenda = [...tbAgenda];
+                                                                        novaAgenda[index].vagas[vagaIndex].orc = e.target.value;
+                                                                        setTbAgenda(novaAgenda);
+                                                                    }}
+                                                                />
+                                                            </td>
+                                                            <td>
+                                                                <input
+                                                                    type="text"
+                                                                    value={vaga.estudo}
+                                                                    onChange={(e) => {
+                                                                        const novaAgenda = [...tbAgenda];
+                                                                        novaAgenda[index].vagas[vagaIndex].estudo = e.target.value;
+                                                                        setTbAgenda(novaAgenda);
+                                                                    }}
+                                                                />
+                                                            </td>
+                                                            <td>
+                                                                <input
+                                                                    type="text"
+                                                                    value={vaga.vaga}
+                                                                    onChange={(e) => {
+                                                                        const novaAgenda = [...tbAgenda];
+                                                                        novaAgenda[index].vagas[vagaIndex].vaga = e.target.value;
+                                                                        setTbAgenda(novaAgenda);
+                                                                    }}
+                                                                />
+                                                            </td>
+                                                            <td>
+                                                                <input
+                                                                    type="text"
+                                                                    value={vaga.tempo}
+                                                                    onChange={(e) => {
+                                                                        const novaAgenda = [...tbAgenda];
+                                                                        novaAgenda[index].vagas[vagaIndex].tempo = e.target.value;
+                                                                        setTbAgenda(novaAgenda);
+                                                                    }}
+                                                                />
+                                                            </td>
+                                                            <td>
+                                                                <select
+                                                                    id='status'
+                                                                    value={vaga.status}
+                                                                    onChange={(e) => {
+                                                                        const novaAgenda = [...tbAgenda];
+                                                                        novaAgenda[index].vagas[vagaIndex].status = e.target.value;
+                                                                        setTbAgenda(novaAgenda);
+                                                                    }}
+                                                                >
+                                                                    <option value="">Selecione...</option>
+                                                                    <option value="Aguardando">Aguardando</option>
+                                                                    <option value="Em Andamento">Em Andamento</option>
+                                                                    <option value="Finalizado">Finalizado</option>
+                                                                    <option value="Cancelado">Cancelado</option>
+                                                                </select>
+                                                            </td>
+                                                            <td>
+                                                                <button
+                                                                    className="btn btn-danger"
+                                                                    onClick={() => removerVaga(index, vagaIndex)}
+                                                                >
+                                                                    Remover
+                                                                </button>
+                                                            </td>
+                                                        </tr>
+                                                    ))}
+                                            </React.Fragment>
+                                        ))}
+                                    </tbody>
+                                </table>
+                            </div>
+                            <button onClick={enviarAgenda} className='modal-btn-agenda'>Salvar no Firebase</button>
                         </div>
                     </div>
                 )}

@@ -140,8 +140,8 @@ export const Usuarios = () => {
             </div>
             {/* Modal de Edição */}
             {showEditModal && (
-                <div className="modal-overlay">
-                    <div className='modal' style={{ backgroundColor: "white", borderRadius: "8px", gap: "10px", width: "400px", height: "400px", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
+                <div className="modal-overlay-usuarios">
+                    <div className='modal-usuarios' >
                         <h2>Editar Usuario</h2>
                         <div>
                             <label>Nome:</label>
@@ -171,8 +171,8 @@ export const Usuarios = () => {
 
             {/* Modal de Adição*/}
             {showAdcModal && (
-                <div className="modal-overlay">
-                    <div className='modal' style={{ backgroundColor: "white", borderRadius: "8px", gap: "10px", width: "400px", height: "400px", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
+                <div className="modal-overlay-usuarios">
+                    <div className='modal-usuarios' >
                         <h2>Editar Usuario</h2>
                         <div>
                             <label>Nome:</label>
@@ -207,8 +207,8 @@ export const Usuarios = () => {
 
             {/* Modal de Confirmação */}
             {showDeleteModal && (
-                <div className="modal-overlay">
-                    <div className="modal">
+                <div className="modal-overlay-usuarios">
+                    <div className="modal-usuarios">
                         <h2>Confirmação de Exclusão</h2>
                         <p>Tem certeza que deseja excluir este cliente?</p>
                         <div className="modal-actions">

@@ -157,7 +157,7 @@ body:has(#container-usuarios) {
 }
 
 
-.modal-overlay {
+.modal-overlay-usuarios {
     position: fixed;
     top: 0;
     left: 0;
@@ -170,24 +170,54 @@ body:has(#container-usuarios) {
     z-index: 1000;
 }
 
-.modal {
+.modal-usuarios {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
     background: white;
+    width: 30%;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
+    margin: 0 !important;
 
-    & input {
-        border-radius: 5px;
-        border: 1px solid var(--cor_primaria);
-        padding: 10px;
-    }
+    & div{
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        justify-content: flex-end;
+
+        & label {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--grey_medcin);
+            margin-bottom: 5px;
+        }
+
+        & input {
+            border-radius: 5px;
+            border: 1px solid var(--grey_medcin);
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            width: 100%;
+            
+        }
+    }    
 }
 
-.modal button {
+.modal-usuarios button {
+    padding: 10px 20px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    background-color: var(--blue_medcin);
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    width: 30%;
 }
 
 .search-container {
@@ -206,9 +236,11 @@ body:has(#container-usuarios) {
 }
 
 .search-input {
-    padding: 5px 10px;
+    padding: 15px 20px;
     border-radius: 5px;
     border: 1px solid var(--grey_medcin);
     font-size: 16px;
     width: 100%;
+    text-transform: capitalize;
+    font-weight: bold;
 }

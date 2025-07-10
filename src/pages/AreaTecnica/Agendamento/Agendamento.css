@@ -163,7 +163,7 @@ body:has(#container-agendamento) {
     font-weight: bold;
 }
 
-.modal {
+.modal-agenda {
     position: fixed;
     top: 0;
     left: 0;
@@ -174,29 +174,49 @@ body:has(#container-agendamento) {
     justify-content: center;
     align-items: center;
     z-index: 1000;
+    /* Permite rolagem se necessário */
 }
 
-.modal-content {
+.modal-content-agenda {
+    display: flex;
+    flex-direction: column;
     background-color: white;
     padding: 20px;
     border-radius: 10px;
-    width: 80%;
-    max-height: 90%;
-    overflow-y: auto;
+    max-width: 70%; /* Define um limite máximo de largura */
+    max-height: 90%; /* Limita a altura para evitar cortes */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content-agenda .table-container {
+    flex: 1; /* Faz o contêiner da tabela ocupar o espaço disponível */
+    overflow-y: auto; /* Adiciona rolagem vertical para a tabela */
+    margin-bottom: 20px; /* Espaço entre a tabela e o botão */
+}
+
+.modal-btn-agenda {
+    border: none;
+    border-radius: 10px;
+    padding: 15px 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    background-color: var(--blue_medcin);
+    cursor: pointer;
+    align-self: center; /* Centraliza o botão horizontalmente */
+    overflow: hidden;
 }
 
 .close {
     top: 10px;
     right: 20px;
-    font-size: 24px;
+    font-size: 1.2rem;
     font-weight: bold;
     cursor: pointer;
+    padding: 5px;
+    border: 1px solid var(--blue_medcin);
+    background-color: transparent;
+    border-radius: 100%;
+
 }
 
-.modal-btn{
-    padding: 10px 20px;
-    font-size: 1.2rem;
-    color: white;
-    background-color: var(--blue_medcin);
-}

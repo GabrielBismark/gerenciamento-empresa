@@ -34,7 +34,6 @@ body:has(#container) {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 30px;
         width: 100%;
         padding: 20px;
 
@@ -53,16 +52,52 @@ body:has(#container) {
             border: 1px solid orange;
             border-radius: 50px;
             cursor: pointer;
-        
+
         }
+
         & #entrar-btn:hover {
             background-color: orange;
             color: white;
             transition: 0.3s;
         }
+
         & #entrar-btn:active {
             transform: scale(0.95);
             transition: 0.1s;
         }
     }
+}
+
+/* Adicione ao seu Login.css */
+.senha-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.senha-container .ipt-login {
+    width: 100%;
+    padding-right: 40px;
+    /* espaço para o ícone */
+}
+
+.icone-olho {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 22px;
+    display: flex;
+    align-items: center;
+}
+
+.form-content-login {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: stretch;
+    gap: 30px;
+    width: 100%;
+    padding: 20px;
 }

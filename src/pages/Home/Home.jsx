@@ -17,7 +17,6 @@ export function Home() {
         }
     }, [navigate]);
 
-
     return (
         <div id='container-home'>
 
